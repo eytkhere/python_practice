@@ -1,0 +1,25 @@
+
+matrix_n = [[1,2],[3,4]]
+print(matrix_n)
+i = 0
+j = 0
+list_int = [0]*4
+for x in matrix_n:
+    for n in x:
+        list_int[i] = n
+        i += 1
+        print(n)
+print(list_int)
+clockwise = list_int[-1:] + list_int[:-1] # clockwise
+#print(clockwise)
+
+counter_clockwise = [0]*len(list_int)
+for t in list_int:
+    counter_clockwise[-1+j] = t
+    j += 1
+#print(counter_clockwise)
+
+slice1 = counter_clockwise[:2]
+slice2 = counter_clockwise[2:]
+
+print(slice1, " ", slice2)
