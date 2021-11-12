@@ -1,0 +1,20 @@
+
+def max_func(seats):
+    seats_list = [0]*int(seats)
+    seats_list[0] = 1
+    i = 0
+    count = 0
+    while i < len(seats_list):
+        if i % 3 == 0:
+            seats_list[i] = 1
+            count += 1
+        else:
+            pass
+        i += 1
+    print(seats_list)
+    print("the total number of seats is: ", count)
+
+
+num_seats = input("Enter amount of total seats: ")
+max_func(num_seats)
+
