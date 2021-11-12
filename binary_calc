@@ -1,0 +1,43 @@
+
+import math
+
+
+def bit_func(num_decimal):
+    num = num_list = num_decimal
+
+    list_size = 0
+    while int(num_list)/2 != 0:
+        list_size += 1
+        num_list = math.floor(num_list)/2
+
+    bin_list = [0]*list_size
+
+    i = 0
+    while int(num)/2 != 0:
+        bin_list[i] = int(num) % 2
+        num = num/2
+        i += 1
+
+    binary_num = "".join(str(bin_list[::-1]))
+    return binary_num
+
+
+def convert_decimal_func(user_num, num_base):
+    num_list = list(str(user_num))
+    reversed_list = num_list[::-1]
+    j = 0
+    for i in reversed_list:
+        reversed_list[j] = int(i)*pow(num_base, j)
+        j += 1
+    decimal_sum = 0
+    for x in reversed_list:
+        decimal_sum += x
+    return bit_func(decimal_sum)  # return value of int
+
+
+num_convert = int(input("Enter number wanting to convert: "))
+base_num = int(input("Enter base of number: "))
+binary_output = convert_decimal_func(num_convert,base_num)
+print(binary_output)
+
+
