@@ -1,0 +1,23 @@
+
+from matplotlib import pyplot as plt
+
+plt.style.use('fivethirtyeight')
+
+ages_x = [20, 25, 27, 35, 40, 42, 47]
+dev_y = [20000, 25000, 27500, 28000, 29000, 34000, 39000]
+
+plt.plot(ages_x, dev_y, color = '#444444', linestyle = '--' ,label = 'All devs')
+
+py_dev_y = [25000, 30000, 35000, 37000, 39000, 42000, 46000]
+plt.plot(ages_x, py_dev_y, color = '#5a7d9a' , linewidth = 3,label = 'Python')
+
+js_dev_y = [22000, 24000, 26000, 29000, 31000, 33000, 35500]
+plt.plot(ages_x, js_dev_y, color = 'y' ,label = 'js')
+
+plt.title("Median salary (USD)")
+plt.xlabel("ages")
+plt.ylabel("salary")
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()
