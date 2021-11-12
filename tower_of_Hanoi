@@ -1,0 +1,4 @@
+num_disc = int(input("enter amount of discs: "))
+min_moves = pow(2,num_disc) - 1
+print(min_moves)
+
